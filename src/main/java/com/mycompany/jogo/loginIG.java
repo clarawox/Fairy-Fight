@@ -12,9 +12,8 @@ import javax.swing.JOptionPane;
  */
 public class loginIG extends javax.swing.JFrame {
 
-    /**
-     * Creates new form loginIG
-     */
+    conectar con = new conectar();
+    
     public loginIG() {
         initComponents();
     }
@@ -91,9 +90,11 @@ public class loginIG extends javax.swing.JFrame {
         String user = TxtUser.getText();
         String senha = TxtSenha.getText();
 
-        tela1 cad = new tela1();
-        cad.setVisible(true);
-        dispose();
+        if () {
+            Escolha cad = new Escolha();
+            cad.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_entrarActionPerformed
 
     private void ckbMostraSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbMostraSenhaActionPerformed

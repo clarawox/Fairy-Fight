@@ -59,7 +59,7 @@ public class conectar {
                 }
                 //System.out.println("Name: " + name);
             } catch (MongoException me) {
-                System.out.println("An error occurred: " + me);
+                System.err.println("An error occurred: " + me);
             }
         }
         return senha;
@@ -143,6 +143,81 @@ public class conectar {
                 } else if (inimigo == "fogo"){
                     venceu = 1;
                 } else if (inimigo == "terra"){
+                    venceu = 2;
+                } else {
+                    venceu = 2;
+                    empate = 1;
+                } break;
+          
+        }
+    }    
+        public void brigaM(String player1, String player2) {
+
+        switch (player1) {
+            case "fogo": 
+                if(player2 == "agua"){
+                    venceu = 2;
+                } else if (player2 == "ar"){
+                    venceu = 1;
+                } else if (player2 == "terra"){
+                    venceu = 1;
+                } else if (player2 == "raio"){
+                    venceu = 2;
+                } else {
+                    venceu = 2;
+                    empate=1;
+                } break;
+                
+            case "agua":
+                if(player2 == "terra"){
+                    venceu = 2;
+                } else if (player2 == "fogo"){
+                    venceu = 1;
+                } else if (player2 == "ar"){
+                    venceu = 1;
+                } else if (player2 == "raio"){
+                    venceu = 2;
+                } else {
+                    venceu = 2;
+                    empate=1;
+                } break;
+
+            case "ar":
+                if(player2 == "fogo"){
+                    venceu = 2;
+                } else if (player2 == "terra"){
+                    venceu = 1;
+                } else if (player2 == "raio"){
+                    venceu = 1;
+                } else if (player2=="agua"){
+                    venceu = 2;
+                } else {
+                    venceu = 2;
+                    empate=1;
+                } break;
+            
+            case "terra":
+                if(player2 == "fogo"){
+                    venceu = 2;
+                } else if (player2 == "agua"){
+                    venceu = 1;
+                } else if (player2 == "raio"){
+                    venceu = 1;
+                } else if (player2 == "ar"){
+                    venceu = 2;
+                } else {
+                    venceu = 2;
+                    empate = 1;
+                } break;
+                
+            case "raio":
+                if(player2 == "ar"){
+                    venceu = 2;
+                } else if (player2 == "agua"){
+                    venceu = 1;
+                } else if (player2 == "fogo"){
+                    venceu = 1;
+                } else if (player2 == "terra"){
                     venceu = 2;
                 } else {
                     venceu = 2;
