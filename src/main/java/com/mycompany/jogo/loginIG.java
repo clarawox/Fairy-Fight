@@ -39,6 +39,7 @@ public class loginIG extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         TxtSenha = new javax.swing.JPasswordField();
         ckbMostraSenha = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
@@ -71,6 +72,16 @@ public class loginIG extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 243, 255));
         jLabel4.setText("ENTRAR:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, 33));
+
+        jButton1.setBackground(new java.awt.Color(183, 101, 163));
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\Voltar.png")); // NOI18N
+        jButton1.setToolTipText("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 40));
 
         TxtSenha.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
         TxtSenha.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +137,12 @@ public class loginIG extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtSenhaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        TelaInicial cad = new TelaInicial();
+        cad.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -166,6 +183,7 @@ public class loginIG extends javax.swing.JFrame {
     private javax.swing.JTextField TxtUser;
     private javax.swing.JCheckBox ckbMostraSenha;
     private javax.swing.JButton entrar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

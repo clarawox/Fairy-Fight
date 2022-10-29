@@ -38,6 +38,7 @@ public class MulComp extends javax.swing.JFrame {
         comp = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,6 +70,15 @@ public class MulComp extends javax.swing.JFrame {
         jLabel3.setText("Como você quer");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
 
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\Voltar.png")); // NOI18N
+        jButton1.setActionCommand("");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\TelaInicial.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 420));
 
@@ -86,6 +96,12 @@ public class MulComp extends javax.swing.JFrame {
         cad.setVisible(true);
         dispose();
     }//GEN-LAST:event_compActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        TelaInicial cad = new TelaInicial();
+        cad.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /*
      * @param args the command line arguments
@@ -124,6 +140,7 @@ public class MulComp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton comp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

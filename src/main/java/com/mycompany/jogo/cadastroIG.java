@@ -39,6 +39,7 @@ public class cadastroIG extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         user = new javax.swing.JTextField();
         Cadastrar = new javax.swing.JButton();
         senha = new javax.swing.JPasswordField();
@@ -70,6 +71,14 @@ public class cadastroIG extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 243, 255));
         jLabel5.setText("Usuário:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\Voltar.png")); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 40));
 
         user.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
         user.addActionListener(new java.awt.event.ActionListener() {
@@ -130,6 +139,12 @@ public class cadastroIG extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ckbMostraSenhaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        TelaInicial cad = new TelaInicial();
+        cad.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -168,6 +183,7 @@ public class cadastroIG extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cadastrar;
     private javax.swing.JCheckBox ckbMostraSenha;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
