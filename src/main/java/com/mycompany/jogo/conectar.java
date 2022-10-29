@@ -65,7 +65,7 @@ public class conectar {
         return senha;
     }
 
-    public void briga(String elemento) {
+    public int briga(String elemento) {
         
         ArrayList elementos = new ArrayList();
         elementos.add("ar");
@@ -89,8 +89,7 @@ public class conectar {
                 } else if (inimigo == "raio"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate=1;
+                    venceu = 3;
                 } break;
                 
             case "agua":
@@ -103,8 +102,7 @@ public class conectar {
                 } else if (inimigo == "raio"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate=1;
+                    venceu = 3;
                 } break;
 
             case "ar":
@@ -117,8 +115,7 @@ public class conectar {
                 } else if (inimigo=="agua"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate=1;
+                    venceu = 3;
                 } break;
             
             case "terra":
@@ -131,8 +128,7 @@ public class conectar {
                 } else if (inimigo == "ar"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate = 1;
+                    venceu = 3;
                 } break;
                 
             case "raio":
@@ -145,17 +141,22 @@ public class conectar {
                 } else if (inimigo == "terra"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate = 1;
+                    venceu = 3;
                 } break;
           
         }
+        
+        return venceu;
     }    
-        public void brigaM(String player1, String player2) {
+        
+    
+    
+    public int brigaM(String player1, String player2) {
 
+        
         switch (player1) {
             case "fogo": 
-                if(player2 == "agua"){
+                if(player2.equals("agua")){
                     venceu = 2;
                 } else if (player2 == "ar"){
                     venceu = 1;
@@ -164,8 +165,7 @@ public class conectar {
                 } else if (player2 == "raio"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate=1;
+                    venceu = 3;
                 } break;
                 
             case "agua":
@@ -178,8 +178,7 @@ public class conectar {
                 } else if (player2 == "raio"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate=1;
+                    venceu = 3;
                 } break;
 
             case "ar":
@@ -192,8 +191,7 @@ public class conectar {
                 } else if (player2=="agua"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate=1;
+                    venceu = 3;
                 } break;
             
             case "terra":
@@ -206,8 +204,7 @@ public class conectar {
                 } else if (player2 == "ar"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate = 1;
+                    venceu = 3;
                 } break;
                 
             case "raio":
@@ -220,12 +217,11 @@ public class conectar {
                 } else if (player2 == "terra"){
                     venceu = 2;
                 } else {
-                    venceu = 2;
-                    empate = 1;
+                    venceu = 3;
                 } break;
           
         }
-        
+        return venceu; 
     }
 
 }

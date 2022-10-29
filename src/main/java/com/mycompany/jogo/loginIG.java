@@ -4,6 +4,8 @@
  */
 package com.mycompany.jogo;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +18,11 @@ public class loginIG extends javax.swing.JFrame {
     
     public loginIG() {
         initComponents();
+        
+        //Centralizar e travar redimensionamento da tela
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        setResizable(false);
     }
 
     /**
@@ -34,39 +41,44 @@ public class loginIG extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         TxtSenha = new javax.swing.JPasswordField();
         ckbMostraSenha = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        entrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Jogo\\src\\main\\Imagens\\1.png")); // NOI18N
+        entrar.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\1.png")); // NOI18N
         entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entrarActionPerformed(evt);
             }
         });
-        getContentPane().add(entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 220, 40));
+        getContentPane().add(entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 220, 40));
 
         TxtUser.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
-        getContentPane().add(TxtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 248, -1));
+        getContentPane().add(TxtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 248, -1));
 
         jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 243, 255));
         jLabel2.setText("Usuário:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Kristen ITC", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 243, 255));
         jLabel3.setText("Senha:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Kristen ITC", 1, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 243, 255));
         jLabel4.setText("ENTRAR:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, 33));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, 33));
 
         TxtSenha.setFont(new java.awt.Font("Kristen ITC", 0, 14)); // NOI18N
-        getContentPane().add(TxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 250, -1));
+        TxtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 250, -1));
 
         ckbMostraSenha.setBackground(new java.awt.Color(183, 101, 163));
         ckbMostraSenha.setFont(new java.awt.Font("Kristen ITC", 1, 14)); // NOI18N
@@ -77,10 +89,11 @@ public class loginIG extends javax.swing.JFrame {
                 ckbMostraSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(ckbMostraSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, -1, -1));
+        getContentPane().add(ckbMostraSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Downloads\\TelaInicial (1).jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\TelaInicial.jpg")); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -88,12 +101,16 @@ public class loginIG extends javax.swing.JFrame {
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         String user = TxtUser.getText();
-        String senha = TxtSenha.getText();
-
-        if () {
-            Escolha cad = new Escolha();
+        
+        char[] senha = TxtSenha.getPassword();
+        String senha2 = new String(senha);
+        System.out.println("Login: " + user +"Senha: " + conectar.getSenha(user));
+        if (senha2.equals(conectar.getSenha(user))) {
+            MulComp cad = new MulComp();
             cad.setVisible(true);
             dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos :(");
         }
     }//GEN-LAST:event_entrarActionPerformed
 
@@ -104,6 +121,10 @@ public class loginIG extends javax.swing.JFrame {
             TxtSenha.setEchoChar('*');
         }
     }//GEN-LAST:event_ckbMostraSenhaActionPerformed
+
+    private void TxtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,9 +166,9 @@ public class loginIG extends javax.swing.JFrame {
     private javax.swing.JTextField TxtUser;
     private javax.swing.JCheckBox ckbMostraSenha;
     private javax.swing.JButton entrar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

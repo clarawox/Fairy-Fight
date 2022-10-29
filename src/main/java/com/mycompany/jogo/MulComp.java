@@ -4,6 +4,9 @@
  */
 package com.mycompany.jogo;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Clara
@@ -15,6 +18,11 @@ public class MulComp extends javax.swing.JFrame {
      */
     public MulComp() {
         initComponents();
+        
+        //Centralizar e travar redimensionamento da tela
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+        setResizable(false);
     }
 
     /**
@@ -28,49 +36,47 @@ public class MulComp extends javax.swing.JFrame {
 
         mult = new javax.swing.JButton();
         comp = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        mult.setText("Multiplayer");
+        mult.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\3.png")); // NOI18N
         mult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 multActionPerformed(evt);
             }
         });
+        getContentPane().add(mult, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 210, 40));
 
-        comp.setText("Computador");
+        comp.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\4.png")); // NOI18N
         comp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 compActionPerformed(evt);
             }
         });
+        getContentPane().add(comp, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 220, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(mult, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(comp, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(198, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mult)
-                    .addComponent(comp))
-                .addGap(71, 71, 71))
-        );
+        jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 243, 255));
+        jLabel2.setText("jogar?");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Kristen ITC", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 243, 255));
+        jLabel3.setText("Como você quer");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\22159743\\Documents\\NetBeansProjects\\Fairy-Fight-main\\src\\main\\Imagens\\TelaInicial.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void multActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multActionPerformed
-        telaPlayer1 cad = new telaPlayer1();
+        telaPlayer cad = new telaPlayer();
         cad.setVisible(true);
         dispose();
     }//GEN-LAST:event_multActionPerformed
@@ -118,6 +124,9 @@ public class MulComp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton comp;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton mult;
     // End of variables declaration//GEN-END:variables
 }
